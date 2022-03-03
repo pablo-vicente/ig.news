@@ -30,11 +30,15 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             cancel_url: process.env.STRIPE_CANCEL_URL
         })
 
+        console.log("stripeCheckoutSession")
+        console.log(stripeCheckoutSession)
+
         return res.status(200).json({
             sessionId: stripeCheckoutSession.id
         })
 
     } else {
+        console.log("passei aqui mas nao deveria")
         res.setHeader('allow', 'POST')
         res.status(405).end('Method not allowed!')
     }
