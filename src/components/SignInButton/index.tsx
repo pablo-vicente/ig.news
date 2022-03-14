@@ -9,8 +9,6 @@ export function SignInButton() {
         data: session
     } = useSession()
 
-    console.log(session)
-
     return session ? (
         <button
             type="button"
